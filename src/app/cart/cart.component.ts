@@ -4,7 +4,7 @@ import { Product } from '../shared/product.model';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-cart',
+  selector: 'cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
@@ -17,7 +17,10 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cartProductsSubscription = this.cartService.cartProducts$.subscribe(products =>{
       this.cartProducts = products
-    })
+    }) 
+  }
+  trackBycartProductId(index: number, cartProduct: Product) {
+    return cartProduct ? cartProduct.id : undefined;
   }
 
   ngOnDestroy() {

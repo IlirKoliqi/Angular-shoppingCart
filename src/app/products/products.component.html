@@ -1,12 +1,13 @@
 <div class="main">
-    <loader *ngIf="products.length === 0"></loader>
-    <ul class="products" *ngIf="products.length > 0">
-        <li class="product-item" *ngFor="let product of products">
+    <ul class="products">
+        <li class="product-item" *ngFor="let product of products; trackBy: trackByProductId">
             <product-item [product]="product" (selectedProduct)="onSelectedProduct($event)"></product-item>
         </li>
     </ul>
 </div>
 <product-details *ngIf="selectedProduct" [product]="selectedProduct" (closeProductDetails)="onCloseProductDetails()"></product-details>
+
+
 
 
 

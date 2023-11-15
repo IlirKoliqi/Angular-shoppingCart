@@ -29,7 +29,6 @@ export class ProductService {
 
     if (productInProducts) {
       productInProducts.quantity += 1;
-      this.productsSubject.next(this.products.slice());
     }
   }
 
@@ -38,7 +37,6 @@ export class ProductService {
 
     if (productInProducts) {
       productInProducts.quantity -= 1;
-      this.productsSubject.next(this.products.slice());
     }
   }
 

@@ -16,17 +16,10 @@ export class ProductsComponent implements OnInit,OnDestroy {
   constructor(private productService: ProductService,private dataService: DataService){}
 
   ngOnInit() {
-    this.fakeDataFetching();
-  }
-  fakeDataFetching() {
-    setTimeout(() => {
-      this.productsSubscription = this.productService.products$.subscribe(products => {
-        this.products = products;
-      });
-      this.dataService.fetchProducts();
-    }, 500);
-
-
+    this.productsSubscription = this.productService.products$.subscribe(products => {
+      this.products = products;
+    });
+    this.dataService.fetchProducts();
   }
 
   onSelectedProduct(product:Product){
@@ -36,6 +29,11 @@ export class ProductsComponent implements OnInit,OnDestroy {
   onCloseProductDetails(){
     this.selectedProduct = null
   }
+
+  trackByProductId(index: number, product: Product) {
+    return product ? product.id : undefined;
+  }
+
 
   ngOnDestroy() {
     if (this.productsSubscription) {

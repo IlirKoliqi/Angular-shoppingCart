@@ -2,7 +2,7 @@
     <h1 class="empty-cart-title" *ngIf="cartProducts.length === 0">
         There are no Products in the Cart
     </h1>
-    <ng-container *ngFor="let cartProduct of cartProducts;">
+    <ng-container *ngFor="let cartProduct of cartProducts; trackBy: trackBycartProductId">
         <cart-item [cartProduct]="cartProduct"></cart-item>
     </ng-container>
     <checkout-details></checkout-details>
