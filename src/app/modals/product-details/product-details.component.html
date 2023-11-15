@@ -1,0 +1,23 @@
+<div class="backdrop" (click)="onBackdropClick($event)">
+    <div class="modal-box">
+        <div class="product-details">
+            <div class="product-image">
+                <img [src]="product.imgUrl">
+            </div>
+            <div class="product-info">
+                <h1 class="product-title">{{ product.name }}</h1>
+                <p class="product-price">{{ product.price }}$</p>
+                <button class="add-to-cart-btn" (click)="addToCart(product)" *ngIf="product.quantity === 0">
+                    <b>Add to cart</b>
+                </button>
+                <div class="product-cart-info" *ngIf="product.quantity > 0">
+                    <p class="added-to-cart">Added <span style="color: #4fbbc8;"><b>{{ product.quantity || 0 }}</b></span></p>
+                    <div class="quantity-buttons">
+                        <button class="quantity-button" (click)="addQuantity(product.id)">+</button>
+                        <button class="quantity-button" (click)="removeQuantity(product.id)">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

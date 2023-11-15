@@ -1,0 +1,38 @@
+
+.main{
+    max-width: 1300px;
+    margin: auto;
+    margin-top: 7rem;
+
+}
+.product-item {
+    padding: 1rem;
+}
+@media only screen and (max-width: 600px) {
+    .products{
+        display: block!important;
+    }
+}
+@media (min-width: 	600px) {
+    .product-item {
+        width: 50%;
+    }
+    .products{
+        display: block;
+    }
+}
+
+@media (min-width: 896px) {
+    .product-item {
+        width: 25%;
+    }
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;
+}
+

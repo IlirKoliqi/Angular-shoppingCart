@@ -1,0 +1,17 @@
+<div class="product" (click)="onSelectedProduct(product)">
+    <div class="product-image">
+        <img  [src]="product.imgUrl">
+    </div>
+    <div class="product-content">
+        <h4 class="product-title">{{ product.name | uppercase}}</h4>
+        <p class="product-price"><b>{{ product.price | currency: 'USD'}}</b></p>
+        <button class="add-to-cart-btn"  (click)="addToCart(product); $event.stopPropagation()" *ngIf="product.quantity === 0"><b>Add to cart</b></button>
+        <div class="product-cart-info"  *ngIf="product.quantity > 0">
+            <p class="added-to-cart">Added <b>{{product.quantity || 0}}</b></p>
+            <div class="quantity-buttons">
+                <button class="quantity-button" (click)="addQuantity(product.id);$event.stopPropagation()">+</button>
+                <button class="quantity-button"  (click)="removeQuantity(product.id);$event.stopPropagation()">-</button>
+            </div>
+        </div>
+    </div>
+</div>

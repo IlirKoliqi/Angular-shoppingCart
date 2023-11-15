@@ -1,0 +1,12 @@
+<ul>
+    <li>
+        <a routerLinkActive="active-products" routerLink="/products" class="products">Products</a>
+    </li>
+    <li>
+        <a (click)="onOpenNewProductFormModal()">+ New Product</a>
+    </li>
+    <li class="cart">
+        <a routerLinkActive="active-cart" routerLink="/cart"><i class="fa-solid fa-cart-shopping" style="color: #4fbbc8;"></i></a><span class="counter">{{totalQuantity}}</span>
+    </li>
+</ul>
+<new-product *ngIf="showNewProductForm" (closeNewProductForm)="onCloseNewProductForm()"></new-product>

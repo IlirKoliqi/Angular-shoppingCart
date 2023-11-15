@@ -1,0 +1,9 @@
+<div class="cart-items">
+    <h1 class="empty-cart-title" *ngIf="cartProducts.length === 0">
+        There are no Products in the Cart
+    </h1>
+    <ng-container *ngFor="let cartProduct of cartProducts;">
+        <cart-item [cartProduct]="cartProduct"></cart-item>
+    </ng-container>
+    <checkout-details></checkout-details>
+</div>

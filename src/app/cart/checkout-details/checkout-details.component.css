@@ -1,0 +1,23 @@
+.checkout-details {
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    gap: 5rem;
+    margin-right: 10px;
+}
+
+.checkout-button {
+    background-color: #c2f9ff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+    color: #4fbbc8;
+}
+
+@media (max-width: 768px) {
+    .checkout-details {
+        justify-content:center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}

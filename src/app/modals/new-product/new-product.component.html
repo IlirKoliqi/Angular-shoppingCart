@@ -1,0 +1,26 @@
+<div class="backdrop"(click)="onBackdropClick($event)">
+    <div class="modal-box">
+        <div class="form-header">
+            <h1 class="form-title">Add New Product</h1>
+            <p class="close-button" (click)="onCloseNewProdModal()">&#10005;</p>
+        </div>
+        <form id="form" #data="ngForm" (ngSubmit)="create(data.value)">
+            <div class="form-field">
+                <label for="product-name">Product name</label>
+                <input #name="ngModel" ngModel name="name" type="text" id="product-name" required [placeholder]="name.touched && name.invalid ? 'Name is required!' : ''"/>
+            </div>
+            <div class="form-field">
+                <label for="image-input">Image URL</label>
+                <input #imgUrl="ngModel" ngModel name="imgUrl" type="text" id="image-url" required [placeholder]="imgUrl.touched && imgUrl.invalid ? 'Image Url is required!' : ''"/>
+            </div>
+            <div class="form-field">
+                <label for="number-input">Price</label>
+                <input #price="ngModel" ngModel name="price" type="number" id="number-input" required/>
+                <p *ngIf="price.touched && price.invalid" class="error-message"> Price is required!</p>
+            </div>
+            <div class="create">
+                <button class="create-button" [disabled]="!data.valid"><b>Create</b></button>
+            </div>
+        </form>
+    </div>
+</div>
