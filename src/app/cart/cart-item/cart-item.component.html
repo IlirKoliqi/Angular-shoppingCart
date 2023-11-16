@@ -4,7 +4,7 @@
         <h3 class="item-title">{{cartProduct.name}}</h3>
     </div>
     <div class="item-info">
-        <h4 class="price" #priceSum>$ {{cartProduct.price * cartProduct.quantity | number: '1.2-2' }}</h4>
+        <h4 class="price">$ {{cartProduct.price * cartProduct.quantity | number: '1.2-2' }}</h4>
         <p class="added-quantity">Added <b>{{cartProduct.quantity}}</b></p>
         <div class="quantity-buttons">
             <button class="quantity-button" (click)="addQuantity(cartProduct.id)">+</button>
@@ -16,8 +16,6 @@
                     <i class="fa-solid fa-trash" style="font-size: 14px;color: red;"></i>
                 </ng-template>
             </button>
-
-
         </div>
     </div>
 </div>

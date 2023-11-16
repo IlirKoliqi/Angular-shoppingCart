@@ -1,7 +1,8 @@
-.product-image{
+.product-image {
     aspect-ratio: 1 / 1;
     display: flex;
 }
+
 img {
     align-self: flex-end;
     width: 100%;
@@ -19,6 +20,7 @@ img {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
 }
+
 .product:not(:hover) {
     transition: 0.3s;
 }
@@ -37,9 +39,10 @@ img {
     text-overflow: ellipsis;
 }
 
-.product-price{
+.product-price {
     margin-top: 10px;
 }
+
 .add-to-cart-btn {
     background-color: white;
     border: none;
@@ -65,9 +68,11 @@ img {
 .added-to-cart {
     margin-right: 20px;
 }
-.added-to-cart b{
+
+.added-to-cart b {
     color: #4fbbc8;
 }
+
 .quantity-buttons {
     display: flex;
     flex-direction: column;

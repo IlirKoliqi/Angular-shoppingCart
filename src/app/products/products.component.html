@@ -1,13 +1,9 @@
 <div class="main">
     <ul class="products">
-        <li class="product-item" *ngFor="let product of products; trackBy: trackByProductId">
+        <li class="product-item" *ngFor="let product of products$ | async; trackBy: trackByProductId">
             <product-item [product]="product" (selectedProduct)="onSelectedProduct($event)"></product-item>
         </li>
     </ul>
 </div>
-<product-details *ngIf="selectedProduct" [product]="selectedProduct" (closeProductDetails)="onCloseProductDetails()"></product-details>
-
-
-
-
-
+<product-details *ngIf="selectedProduct" [product]="selectedProduct"
+                 (closeProductDetails)="onCloseProductDetails()"></product-details>

@@ -11,7 +11,8 @@
                     <b>Add to cart</b>
                 </button>
                 <div class="product-cart-info" *ngIf="product.quantity > 0">
-                    <p class="added-to-cart">Added <span style="color: #4fbbc8;"><b>{{ product.quantity || 0 }}</b></span></p>
+                    <p class="added-to-cart">Added <span
+                            style="color: #4fbbc8;"><b>{{ product.quantity || 0 }}</b></span></p>
                     <div class="quantity-buttons">
                         <button class="quantity-button" (click)="addQuantity(product.id)">+</button>
                         <button class="quantity-button" (click)="removeQuantity(product.id)">-</button>

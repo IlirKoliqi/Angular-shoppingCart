@@ -1,6 +1,6 @@
 .checkout-details {
     display: flex;
-    justify-content:right;
+    justify-content: right;
     align-items: center;
     gap: 5rem;
     margin-right: 10px;
@@ -16,7 +16,7 @@
 
 @media (max-width: 768px) {
     .checkout-details {
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
     }

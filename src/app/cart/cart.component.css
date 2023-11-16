@@ -1,7 +1,8 @@
-.cart-items{
+.cart-items {
     margin: 7rem auto 0;
     max-width: 1300px;
 }
-.empty-cart-title{
+
+.empty-cart-title {
     text-align: center;
 }

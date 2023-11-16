@@ -1,27 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { CartService } from 'src/app/shared/cart.service';
+import {Component, OnInit} from '@angular/core';
+import {CartService} from 'src/app/shared/cart.service';
+import {Observable} from 'rxjs';
 
 @Component({
-  selector: 'checkout-details',
-  templateUrl: './checkout-details.component.html',
-  styleUrls: ['./checkout-details.component.css'],
+    selector: 'checkout-details',
+    templateUrl: './checkout-details.component.html',
+    styleUrls: ['./checkout-details.component.css'],
 })
-export class CheckoutDetailsComponent implements OnInit  {
-  totalQuantity = 0;
-  totalPrice = 0;
-  constructor(private cartService: CartService) {}
+export class CheckoutDetailsComponent {
+    totalQuantity$ = this.cartService.totalQuantitySubject;
+    totalPrice$ = this.cartService.totalPriceSubject;
 
-  ngOnInit() {
-    this.cartService.totalQuantitySubject.subscribe(value => {
-      this.totalQuantity = value;
-    });
+    constructor(private cartService: CartService) {
+    }
 
-    this.cartService.totalPriceSubject.subscribe(value => {
-      this.totalPrice = value;
-    });
-
-    this.cartService.updateTotalQuantity();
-    this.cartService.updateTotalCartPrice();
-  }
 
 }

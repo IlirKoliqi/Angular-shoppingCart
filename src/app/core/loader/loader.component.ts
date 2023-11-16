@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'loader',
-  templateUrl: './loader.component.html',
-  styleUrls: ['./loader.component.css']
+    selector: 'loader',
+    templateUrl: './loader.component.html',
+    styleUrls: ['./loader.component.css']
 })
-export class LoaderComponent {}
+export class LoaderComponent {
+}

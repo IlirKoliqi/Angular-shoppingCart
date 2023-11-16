@@ -1,23 +1,27 @@
 
-.main{
+.main {
     max-width: 1300px;
     margin: auto;
     margin-top: 7rem;
 
 }
+
 .product-item {
     padding: 1rem;
 }
+
 @media only screen and (max-width: 600px) {
-    .products{
-        display: block!important;
+    .products {
+        display: block !important;
     }
 }
-@media (min-width: 	600px) {
+
+@media (min-width: 600px) {
     .product-item {
         width: 50%;
     }
-    .products{
+
+    .products {
         display: block;
     }
 }
@@ -27,6 +31,7 @@
         width: 25%;
     }
 }
+
 .products {
     display: flex;
     flex-wrap: wrap;

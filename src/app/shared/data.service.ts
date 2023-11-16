@@ -1,8 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Product} from './product.model';
-import {delay, map,Subject} from 'rxjs';
-import {ProductService} from './product.service';
+import {delay, map, Subject} from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
@@ -11,7 +10,8 @@ export class DataService {
     private api: string = 'https://my-json-server.typicode.com/jubs16/Products/Products';
     isFetching = new Subject<boolean>()
 
-    constructor(private http: HttpClient, private productService: ProductService) {}
+    constructor(private http: HttpClient) {
+    }
 
     fetchProducts() {
         this.isFetching.next(true)

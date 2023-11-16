@@ -3,7 +3,8 @@
     border-radius: 20px;
     padding: 10px;
 }
-.active-products{
+
+.active-products {
     background-color: white;
     border-radius: 20px;
     color: #353935 !important;
@@ -11,7 +12,8 @@
     padding: 10px 30px 10px 30px;
     margin: 0px;
 }
-.products{
+
+.products {
     padding: 10px 30px 10px 30px;
 }
 

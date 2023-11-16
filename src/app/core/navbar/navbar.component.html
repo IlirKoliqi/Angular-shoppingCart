@@ -6,7 +6,7 @@
         <a (click)="onOpenNewProductFormModal()">+ New Product</a>
     </li>
     <li class="cart">
-        <a routerLinkActive="active-cart" routerLink="/cart"><i class="fa-solid fa-cart-shopping" style="color: #4fbbc8;"></i></a><span class="counter">{{totalQuantity}}</span>
+        <a routerLinkActive="active-cart" routerLink="/cart"><i class="fa-solid fa-cart-shopping" style="color: #4fbbc8;"></i></a><span class="counter">{{ cartLength$ | async }}</span>
     </li>
 </ul>
 <new-product *ngIf="showNewProductForm" (closeNewProductForm)="onCloseNewProductForm()"></new-product>
