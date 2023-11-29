@@ -16,12 +16,12 @@ export class CartItemComponent {
 
 
     addQuantity(id: number) {
-        this.cartService.addQuantityToProduct(id)
+        this.cartService.addQuantity(id)
         this.productService.addQuantity(id)
     }
 
     removeQuantity(id: number) {
-        this.cartService.removeQuantityFromProduct(id)
+        this.cartService.removeQuantity(id)
         this.productService.removeQuantity(id)
     }
 

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import {BehaviorSubject, Observable } from 'rxjs';
 import {Product} from './product.model';
 
 @Injectable({
@@ -23,7 +23,7 @@ export class CartService {
         this.updateCartLength();
     }
 
-    addQuantityToProduct(productId: number) {
+    addQuantity(productId: number) {
         const cartProduct = this.cartProducts.find((cp) => cp.id === productId);
         if (cartProduct) {
             cartProduct.quantity += 1;
@@ -32,13 +32,14 @@ export class CartService {
         }
     }
 
-    removeQuantityFromProduct(productId: number) {
+    removeQuantity(productId: number) {
         const cartProduct = this.cartProducts.find((cp) => cp.id === productId);
         if (cartProduct) {
             cartProduct.quantity -= 1;
 
             if (cartProduct.quantity <= 0) {
                 this.removeProductsIfQuantityZero();
+                this.updateCartLength();
             }
             this.updateTotalQuantity();
             this.updateTotalCartPrice();

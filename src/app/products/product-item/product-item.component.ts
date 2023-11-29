@@ -23,12 +23,12 @@ export class ProductItemComponent {
 
     addQuantity(productId: number) {
         this.productService.addQuantity(productId)
-        this.cartService.addQuantityToProduct(productId)
+        this.cartService.addQuantity(productId)
     }
 
     removeQuantity(productId: number) {
         this.productService.removeQuantity(productId)
-        this.cartService.removeQuantityFromProduct(productId)
+        this.cartService.removeQuantity(productId)
     }
 
     onSelectedProduct(product: Product) {

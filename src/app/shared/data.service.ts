@@ -1,20 +1,19 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {Product} from './product.model';
-import {delay, map, Subject} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Product } from './product.model';
+import { BehaviorSubject, delay, map, Subject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class DataService {
     private api: string = 'https://my-json-server.typicode.com/jubs16/Products/Products';
-    isFetching = new Subject<boolean>()
+    isFetching = new BehaviorSubject<boolean>(true)
 
     constructor(private http: HttpClient) {
     }
 
     fetchProducts() {
-        this.isFetching.next(true)
         return this.http.get<Product[]>('/assets/products.json').pipe(
             delay(1000),
             map((products) => products.map((product) => ({...product, id: this.generateRandomId(), quantity: 0})))

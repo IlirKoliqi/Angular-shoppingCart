@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { ProductsComponent } from './products/products.component';
@@ -14,7 +13,7 @@ import { CheckoutDetailsComponent } from './cart/checkout-details/checkout-detai
 import { NewProductComponent } from './modals/new-product/new-product.component';
 import { ProductDetailsComponent } from './modals/product-details/product-details.component';
 import { LoaderComponent } from './core/loader/loader.component';
-import {AppRoutingModule} from "./app-routing.module";
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [

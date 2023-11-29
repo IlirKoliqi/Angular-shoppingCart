@@ -18,20 +18,19 @@ export class ProductDetailsComponent {
     }
 
     addToCart(product: Product) {
-        this.cartService.addToCart(product);
-        product.quantity = (product.quantity || 0) + 1
-        console.log(product.quantity)
+        product.quantity += 1;
+        this.cartService.addToCart({...product});
     }
 
 
     addQuantity(productId: number) {
         this.productService.addQuantity(productId)
-        this.cartService.addQuantityToProduct(productId)
+        this.cartService.addQuantity(productId)
     }
 
     removeQuantity(productId: number) {
         this.productService.removeQuantity(productId)
-        this.cartService.removeQuantityFromProduct(productId)
+        this.cartService.removeQuantity(productId)
     }
 
     onBackdropClick(event: Event) {
