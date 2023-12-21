@@ -12,8 +12,7 @@ export class ProductService {
     private productsSubject: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
     products$: Observable<Product[]> = this.productsSubject.asObservable();
 
-    constructor(private dataService: DataService) {
-    }
+    constructor(private dataService: DataService) {}
 
     setProducts(products: Product[]) {
         this.products = products
